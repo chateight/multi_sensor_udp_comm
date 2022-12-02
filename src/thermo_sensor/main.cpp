@@ -24,8 +24,11 @@ void loop_thermo() {
     Serial.print("emmisivity : ");  Serial.println(mlx.readEmissivity());
     Serial.println();
 
+    String val = String(mlx.readObjectTempC());
+    udp_loop(val);
+    
     M5.Lcd.setCursor(50, 100);
-    M5.Lcd.print(mlx.readObjectTempC());
+    M5.Lcd.print(val);
     M5.Lcd.print(" degree");
 
     read_batt();

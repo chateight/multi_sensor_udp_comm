@@ -5,11 +5,11 @@
 
 
 // Wi-Fi connection info.
-const char* ssid     = "your said";
-const char* password = "your pw";
+const char* ssid     = "aterm-eb69c6-g";
+const char* password = "29701a23dc843";
 const int port = 3002;
 
-String string_buf = "message from M5stack";
+//String string_buf = "message from M5stack";
 
 //ntp server and time info
 const char* ntpServer =  "ntp.nict.jp";
@@ -108,7 +108,7 @@ void udp_setup() {
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
 }
 
-void udp_loop(){
+void udp_loop(String val){
     // get current rime
     if (!getLocalTime(&timeinfo)) {
       Serial.println("Failed to obtain time");
@@ -132,13 +132,12 @@ void udp_loop(){
       udp.write(tmp);
       i++;
     }
-    // contents
+    // measured value
     i = 0;
-    while( string_buf.length() > i){
-      char tmp = string_buf.charAt(i);
+    while( val.length() > i){
+      char tmp = val.charAt(i);
       udp.write(tmp);
       i++;
     }
     udp.endPacket();
-    delay(1000);
 }

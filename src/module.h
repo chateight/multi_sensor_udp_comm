@@ -8,6 +8,8 @@ int setup_dist();
 void loop_dist();
 int setup_thermo();
 void loop_thermo();
+void udp_setup();
+void udp_loop(String val);
 
 void sensor_error();
 void read_batt();

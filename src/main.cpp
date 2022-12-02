@@ -28,6 +28,8 @@ void setup(void)
   Wire.begin();           // Wire init, adding the I2C bus.
   Serial.begin(115200);
 
+  udp_setup();
+  
   if (setup_dist() == 1){
     dev_id = 1;
   } else if (setup_env() == 1){
