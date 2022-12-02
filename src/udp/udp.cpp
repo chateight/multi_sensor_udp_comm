@@ -5,8 +5,8 @@
 
 
 // Wi-Fi connection info.
-const char* ssid     = "aterm-eb69c6-g";
-const char* password = "29701a23dc843";
+const char* ssid     = "your ssid";
+const char* password = "your pw";
 const int port = 3002;
 
 //String string_buf = "message from M5stack";
