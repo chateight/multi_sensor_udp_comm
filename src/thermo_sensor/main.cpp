@@ -32,7 +32,7 @@ void loop_thermo() {
     M5.Lcd.print(" degree");
 
     read_batt();
-    delay(500);
+    delay(5000);
     M5.Lcd.clear(BLACK);
 }
 
